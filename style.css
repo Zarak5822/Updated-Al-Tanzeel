@@ -1,0 +1,95 @@
+
+.main-heading{
+    margin-left: 11em;
+}
+.mb-3.center {
+    margin-left: 6em;
+    font-size: 33px;
+}
+.paragraph{
+    font-family: "Urdu Nastaliq Unicode";
+    font-size: 20px;
+    text-align: end;
+}
+h3.heading {
+    text-align: end;
+}
+
+button.btn.btn-success.readmore {
+    float: right;
+    background-color: #fbc902;
+    border: 0px;
+}
+
+button.btn.btn-success.readmore1 {
+    float: right;
+    background-color: #fbc902;
+    border: 0px;
+}
+button.btn.btn-success.readmore2 {
+    float: right;
+    background-color: #fbc902;
+    border: 0px;
+}
+.more-info{
+    display: none;
+}
+.more-info1{
+    display: none;
+}
+.more-info2{
+    display: none;
+}
+button.btn.btn-success.mt-5.mb-5 {
+    background-color: #fbc902;
+    border: 0px;
+}
+h1.media-heading.mt-5.mb-5 {
+    font-family: Roboto;
+    border-bottom: 1px solid;
+}
+.sidebar {
+    text-align: center;
+    background-color: #00aef0;
+    padding: 20px;
+    font-family: "Urdu Nastaliq Unicode";
+    color: white;
+}
+.main {
+    background-color: white;
+    border: 1px solid grey;
+    text-align: right;
+    font-family: "Urdu Nastaliq Unicode";
+    font-size: 24px;
+}
+p.sidebarquestions {
+    font-size: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+}
+.col-md-8.rightbox{
+    font-family: "Urdu Nastaliq Unicode";
+}
+p.fatwas.pr-4 {
+    text-align: right;
+    background-color: whitesmoke;
+    padding: 20px;
+    font-size: 24px;
+    font-family: "Urdu Nastaliq Unicode";
+}
+textarea.form-control.align {
+    text-align: right;
+}
+p.zakatlabels {
+    font-size: 17px;
+    text-align: justify;
+}
+.nav-item a {
+    font-size: 21px !important;
+    color: #FBC902;
+  }
+  p.media-heading.mt-5.mb-5 {
+    font-size: 36px;
+    border-bottom: 1px solid;
+    text-align: end;
+}

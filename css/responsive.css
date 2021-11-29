@@ -1,0 +1,238 @@
+      /* Normal desktop :992px. */
+      @media (min-width: 992px) and (max-width: 1200px) {
+      .banner-text-2 {
+        padding: 10px 15px 22px;
+      }
+      .blog-info .post-info span {
+        padding-right: 4px;
+      }    
+      .blog-info h3 {
+        font-size: 16px;
+      }  
+      }     
+      /* Tablet desktop :768px. */
+      @media (min-width: 768px) and (max-width: 991px) {
+      .main-menu ul li a {
+        padding: 42px 14px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        margin-left: 28px;
+    }
+      .quran-img {
+        max-width: 42%;
+        margin-left: 198px;
+        margin-top: 25px;
+    }
+      .logo {
+        margin-top: 31px;
+      }
+      .slider-text h2 {
+        font-size: 42px;
+      line-height: 42px;
+      }
+      .banner-text h2 {
+        font-size: 35px;
+        line-height: 34px;
+      }
+      .banner-text h2 {
+        font-size: 30px;
+        line-height: 29px;
+      }
+      .banner-text-2 {
+        padding: 8px 5px 21px;
+      }
+      .product-btn > a {
+        padding: 8px 10px;
+      }
+      .header-top-menu {
+        text-align: center;
+      }
+      .width-full{width:100%}
+      .banner-text {
+        padding: 0 20px;
+      }
+      .about-title {
+        margin-top: 20px;
+      }
+      .produvt-res .pro-price span {
+        font-size: 14px;
+      } 
+      .blog-active .owl-nav div {
+        display: none;
+      }    
+      .product-active .owl-nav div {
+        display: none;
+      }    
+      }
+
+
+      @media (max-width: 767px) {
+      .logo {
+        margin-top: 0;
+        width: 65%;
+      }
+      .card {
+        border: 1px solid #ccc;
+        margin-left: 28px;
+    }
+      .quran-img {
+        max-width: 42%;
+        margin-left: 198px;
+        margin-top: 25px;
+    }
+      .product-active .owl-nav div {
+        display: none;
+      }
+      .main-menu-area {
+        padding: 30px 0 19px;
+      }
+      .slider-active .owl-nav div {
+        font-size: 32px;
+        height: 50px;
+        line-height: 47px;
+        width: 50px;
+      }
+      .slider-text h2 {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      .shopping {
+        padding: 13px 20px;
+      
+      }
+      .slider-text span {
+        font-size: 20px;
+        line-height: 19px;
+      }
+      .banner-wrapper {
+        width: 100%;
+      }
+      .product-active .owl-nav div.owl-next {
+        right: 0;
+      }
+      .product-active .owl-nav div {
+        left: 0;
+      }
+      .copyright {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .payment {
+        float: none;
+        text-align: center;
+      }
+
+      .banner-img > img {
+        width: 100%;
+      }
+      .about-title {
+        margin-top: 20px;
+      }
+      .contact-info {
+        margin-bottom: 35px;
+        width: 100%;
+      }
+      .contact {
+        float: left;
+        width: 100%;
+      }
+      .banner-text-2 {
+        padding: 10px 30px 22px;
+      }
+      .header-top-area {
+        display: none;
+      }
+      .single-product-info {
+        margin-top: 30px;
+      }    
+      .cart_totals {
+        text-align: left;
+      }   
+      .checkbox-form h3 {
+        font-size: 15px;
+      }    
+      .your-order {
+        padding: 30px 5px 45px;
+      }   
+      .breadcrumb-text h1 {
+        font-size: 30px;
+      }   
+      .blog-text blockquote {
+        padding: 14px 25px;
+      }    
+      .comment-form {
+        margin-bottom: 30px;
+      }    
+      .blog-active .owl-nav div {
+        display: none;
+      }  
+      .product-active .owl-nav div {
+        display: none;
+      }    
+      }
+      @media (max-width: 480px) {
+        .single-slider {
+          min-height: 300px;
+        }
+        .quran-img {
+          max-width: 42%;
+          margin-left: 67px;
+          margin-top: 28px;
+      }
+      .card {
+        border: 1px solid #ccc;
+        margin-left: 22px;
+    }
+        .breadcrumb-banner-area
+          {
+            padding:70px 0;
+            min-height:200px;
+          }
+          .section-title h2 {
+            display: inline-block;
+            font-size: 24px;
+            margin-bottom:20px;
+            margin-top: 0;
+            padding-bottom: 18px;
+        }
+          .contact-info-bar::before {
+            content:'';
+            position: absolute;
+            background-color:#ccc;
+            width:100%;
+            height: 2px;
+            left:0px;
+            top:20px;
+            bottom:0px;
+          }
+          ul.techstack-list li {
+            display: block;
+            font-size: 16px;
+        }
+          ul.techstack-list li i::before {
+            background-color: #fbc902;
+            color: #fff;
+            display: inline-block;
+            width: 50px;
+            font-size: 18px;
+            text-align: center;
+            height: 50px;
+            border-radius: 40px;
+            line-height:50px;
+        }
+        .company-content-inside-detail .sec-inside-detail h3 {
+            width: 140px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+          .portfolio-active .owl-nav{
+            display:none;
+          }
+          .footer-menu ul li{
+            display:block;
+          }
+          .footer-menu ul li a{
+            display:block;
+          }
+        }
