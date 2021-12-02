@@ -1449,5 +1449,15 @@ p.fatwas.pr-4 a :hover{
   color:#fbc902 ;
   text-decoration: none;
 }
+a.btn.btn-primary.btn {
+  margin-left: 74px;
+}
+h5.card-title {
+  text-align: center;
+}
+input.btn.btn-success.btn-block {
+  max-width: 88px;
+}
+
 
 /* css end here */

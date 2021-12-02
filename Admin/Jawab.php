@@ -1,12 +1,33 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header('location:Login.php');
+}
+
+?>
+<?php
+
 require 'connection.php';
-$id = $_GET["question_id"];
-$sql = "SELECT `id`, `Questioner_name`, `Questioner_email`, `Questioner_whatappno`, `Questioner_address`, `Questioner_city`, `Questioner_country`, `Questions`, `categories` FROM `questions` WHERE id='$id'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$question=$row["Questions"];
-$id=$row["id"];
-$name=$row["Questioner_name"];
+if(isset($_POST['insert']))
+{
+
+$id=$_POST['id'];
+$answers=$_POST['answer'];
+
+
+
+
+$sql="Insert into answers (id,answers) values 
+('$id','$answers')";
+
+if ($conn->query($sql) === TRUE) {
+    echo '<script>alert("Data Has been Added Succesfully")</script>';
+    // header("location: Movie-Insert.php");
+    
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
 
 ?>
 <!DOCTYPE html>
@@ -29,48 +50,34 @@ $name=$row["Questioner_name"];
     <link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: Urdu Nastaliq Unicode">
+
     <div class="container">
         <div class="row">
-            <h1 class="media-heading mt-5 mb-5">Fatwas</h1>
+            <h1 class="main-heading mt-5 mb-5">جواب لکھیں۔</h1>
+
         </div>
-            <div class="row">
-                <div class="col-md-3  sidebar">
-                  <h3>متعلقہ سوالات</h3>
-                  <?php
-                  
-                     $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
-                    $result = $conn->query($sql);
-                    while ($row = $result->fetch_assoc()) {
-                        $questionside=$row["Questions"];
-
-                        ?>
-                  <p class="sidebarquestions"><?php echo $questionside?></p>
-                  <?php
-                        }
-                        ?>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-8 main">
-                    <h4 class="questionN0 pt-4 pr-4">سوال نمبر:<?php echo $id?></h4>
-                    <p class="question pr-4"><?php echo $question?></p>
-                    <p class="pr-4"><?php echo $name?>&nbsp;:سائل</p>
-                    <p class="pr-4">:مقام</p>
-                    <p class="pr-4">:جواب</p>
-                    <?php
-                    $sql = mysqli_query($conn ,"SELECT * FROM `answers` where id = '$id'");
-                    // $result = $conn->query($sql);
-                    while ($row = mysqli_fetch_array($sql)) {
-                    ?>
-                    <p class="pr-4"><?php echo $row['answers'] ?></p>
-                    <?php
-                    }
-                    ?>
-                </div>
-
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="" method="post"> 
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputId">ID *</label>
+                            <input type="text" required class="form-control" id="inputID" name="id" placeholder="Enter the same id in which question id have">
+                            <p>وہی آئی ڈی درج کریں جس میں سوال کی شناخت ہے۔ </p>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputAnswer">Answer *اپنا جواب یہاں درج کریں۔</label>
+                            <textarea  class="form-control" id="inputanswer" name="answer" placeholder="Enter Your Answer"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <button type="submit" name="insert" value="Save" class="btn btn-success mt-5 mb-5">جمع کرائیں</button>
+                        </div>
+                </form>
             </div>
+        </div>
     </div>
-   
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -82,7 +89,7 @@ $name=$row["Questioner_name"];
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script>
+<!-- <script>
     $(document).ready(function () {
         $(".readmore").click(function () {
             $(".more-info").toggle("slow");
@@ -94,6 +101,6 @@ $name=$row["Questioner_name"];
             $(".more-info2").toggle("slow");
         });
     });
-</script>
+</script> -->
 
 </html>

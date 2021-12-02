@@ -11,11 +11,12 @@ $quest_address=$_POST['address'];
 $quest_city=$_POST['city'];
 $quest_country=$_POST['country'];
 $questions=$_POST['question'];
+$category=$_POST['category'];
 
 
 
-$sql="Insert into questions (id, Questioner_name, Questioner_email, Questioner_whatappno, Questioner_address, Questioner_city, Questioner_country, Questions) values 
-('','$quest_name','$quest_email','$quest_whatapp','$quest_address','$quest_city','$quest_country','$questions')";
+$sql="Insert into questions (id, Questioner_name, Questioner_email, Questioner_whatappno, Questioner_address, Questioner_city, Questioner_country, Questions, categories) values 
+('','$quest_name','$quest_email','$quest_whatapp','$quest_address','$quest_city','$quest_country','$questions','$category')";
 
 if ($conn->query($sql) === TRUE) {
     echo '<script>alert("Data Has been Added Succesfully")</script>';
@@ -47,7 +48,7 @@ if ($conn->query($sql) === TRUE) {
     <link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
 </head>
 
-<body>
+<body style="font-family: Urdu Nastaliq Unicode">
     <div class="container">
         <div class="row">
             <h1 class="main-heading mt-5 mb-5">رہنمائے صارف</h1>
@@ -149,6 +150,24 @@ if ($conn->query($sql) === TRUE) {
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City *شہر </label>
                                 <input type="text" class="form-control" name="city" id="inputCity">
+                            </div>
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCategory">Categories *اقسام </label>
+                                <select class="form-control" name="category" id="inputCategory">
+                                   <option selected>Choose ....</option>
+                                    <option value="ایمانیات">ایمانیات</option>
+                                    <option value="عقائد">عقائد</option>
+                                    <option value="عبادات">عبادات</option>
+                                    <option value="معاملات">معاملات</option>
+                                    <option value="معاشرت">معاشرت</option>
+                                    <option value="مالیات">مالیات</option>
+                                    <option value="تصوف">تصوف</option>
+                                    <option value="سیرت">سیرت</option>
+                                    <option value="متفرق مسائل">متفرق مسائل</option>
+                                    <option value="اسلامی تاریخ">اسلامی تاریخ</option>
+
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">Country * ملک</label>
@@ -263,7 +282,7 @@ if ($conn->query($sql) === TRUE) {
                                     <option value="Iraq">Iraq</option>
                                     <option value="Ireland">Ireland</option>
                                     <option value="Isle of Man">Isle of Man</option>
-                                    <option value="Israel">Israel</option>
+                                   
                                     <option value="Italy">Italy</option>
                                     <option value="Jamaica">Jamaica</option>
                                     <option value="Japan">Japan</option>
@@ -436,7 +455,7 @@ if ($conn->query($sql) === TRUE) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script>
+<!-- <script>
     $(document).ready(function () {
         $(".readmore").click(function () {
             $(".more-info").toggle("slow");
@@ -448,6 +467,6 @@ if ($conn->query($sql) === TRUE) {
             $(".more-info2").toggle("slow");
         });
     });
-</script>
+</script> -->
 
 </html>

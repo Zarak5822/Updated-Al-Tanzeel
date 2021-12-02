@@ -87,7 +87,7 @@ $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
 
-                    <p class=" fatwas pr-4"><?php echo $row["Questions"] ?></p>
+                    <p class=" fatwas pr-4"><a style="text-decoration: none;" href="FatwaDetail.php?question_id=<?php echo $row["id"] ?>"><?php echo $row["Questions"] ?></a></p>
                 <?php
                 }
                 ?>
@@ -96,6 +96,10 @@ $result = $conn->query($sql);
         </div>
     </div>
                     </div>
+
+
+                    <!-- Yaha se ایمانیات Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-2" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">ایمانیات</p>
                         <div class="row">
@@ -120,7 +124,8 @@ $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
 
-                    <p class=" fatwas pr-4"><?php echo $row["Questions"] ?></p>
+            <p class=" fatwas pr-4"><a style="text-decoration: none;" href="FatwaDetail.php?question_id=<?php echo $row["id"] ?>"><?php echo $row["Questions"] ?></a></p>
+
                 <?php
                 }
                 ?>
@@ -130,12 +135,17 @@ $result = $conn->query($sql);
                         
 
                     </div>
+
+                    <!-- Yaha se عقائد Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-3" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">عقائد</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -160,12 +170,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se عبادات Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-4" role="tabpanel">
                         <p class="media-heading mt-5 mb-5"> عبادات</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -177,7 +191,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='عبادات'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -190,12 +204,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se معاملات Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-5" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">معاملات</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -207,7 +225,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='معاملات'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -220,12 +238,17 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+
+                    <!-- Yaha se معاشرت Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-6" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">معاشرت</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -237,7 +260,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='معاشرت'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -250,12 +273,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se مالیات Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-7" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">مالیات</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -267,7 +294,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='مالیات'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -280,12 +307,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se تصوف Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-8" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">تصوف</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -297,7 +328,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='تصوف'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -310,12 +341,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se سیرت Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-9" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">سیرت</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -327,7 +362,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='سیرت'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -340,12 +375,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se متفرق مسائل Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-10" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">متفرق مسائل</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -357,7 +396,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='متفرق مسائل'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
@@ -370,12 +409,16 @@ $result = $conn->query($sql);
 
         </div>
                     </div>
+                    <!-- Yaha se اسلامی تاریخ Start ho rha hn -->
+
                     <div class="tab-pane" id="tabs-11" role="tabpanel">
                         <p class="media-heading mt-5 mb-5">اسلامی تاریخ</p>
                         <div class="row">
             <div class="col-md-3  sidebar">
                 <h3>متعلقہ سوالات</h3>
                 <?php
+                $sql = "SELECT * FROM questions ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
 
                 ?>
@@ -387,7 +430,7 @@ $result = $conn->query($sql);
             <div class="col-md-1"></div>
             <div class="col-md-8 rightbox">
                 <?php
-                $sql = "SELECT * FROM questions";
+                $sql = "SELECT * FROM `questions` WHERE `categories`='اسلامی تاریخ'";
                 $result = $conn->query($sql);
                 while ($row = $result->fetch_assoc()) {
                 ?>
