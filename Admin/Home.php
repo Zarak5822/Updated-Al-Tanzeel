@@ -1,8 +1,15 @@
 <?php
+include "connection.php";
 session_start();
 if(!isset($_SESSION['username'])){
     header('location:Login.php');
 }
+$sql="SELECT COUNT(Questions) as number from questions";
+$result=$conn->query($sql);
+$row=$result->fetch_assoc();
+$notif=$row['number'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,9 +82,12 @@ if(!isset($_SESSION['username'])){
                 <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Questions</h5>
+                    <h5 class="card-title">Questions (<?php
+                    echo $notif;
+                    ?>)</h5>
                     <p class="card-text"></p>
                     <a href="Questions.php" class="btn btn-primary">Open</a>
+                   
                 </div>
                 </div>
                 </div>

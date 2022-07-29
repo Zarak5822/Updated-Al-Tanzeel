@@ -15,6 +15,7 @@ if ($result->num_rows > 0) {
     $questionname= $row["Questioner_name"];
     $question=$row["Questions"];
     $answer=$row["answers"];
+    echo $answer;
   }
 } else {
   echo "0 results";
@@ -43,7 +44,7 @@ $conn->close();
             unicode-bidi: bidi-override;
             direction: RTL;
         }
-        .main{
+        .Q{
             display: none;
         }
       
@@ -52,6 +53,7 @@ $conn->close();
 </head>
 
 <body style="font-family: Urdu Nastaliq Unicode">
+
 
     <div class="container">
         <div class="row">
@@ -92,14 +94,15 @@ $conn->close();
                                   </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-8 main">
-                    <h4 class="questionN0 pt-4 pr-4">سوال نمبر:<?php echo $questionid ?></h4>
-                    <p class="question pr-4"><?php echo $question?>۔</p>
-                    <p class="pr-4"><?php echo $questionname?>&nbsp;:سائل</p>
-                    <p class="pr-4">:مقام</p>
-                    <p class="pr-4">:جواب</p>
-                    <?php
+                    <h4 class="questionN0 Q pt-4 pr-4">سوال نمبر:<?php echo $questionid ?></h4>
+                    <p class="question pr-4 Q"><?php echo $question?>۔</p>
+                    <p class="pr-4 Q "><?php echo $questionname?>&nbsp;:سائل</p>
+                    <p class="pr-4 Q">:مقام</p>
+                    <p class="pr-4 Q">:جواب</p>
+                   <p class="Q"> <?php
                    echo  $answer ;                   
                     ?>
+                   </p>
                                     </div>
             </div>
             </div>
@@ -125,9 +128,14 @@ $conn->close();
     });
 </script> -->
 <script>
+  $(document).ready(function(){
+  $("#input-btn").click(function(){
+    $(".Q").show();
+  });
+});
 $(document).ready(function(){
   $("#input-btn").click(function(){
-    $(".answerbox").show();
+    $(".Q").show();
   });
 });
 </script>
